@@ -1,0 +1,45 @@
+:root {
+    /* The main background behind the glass - use a dark gradient or abstract image */
+    --body-bg: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); 
+    
+    /* The Glass Properties */
+    --glass-surface: rgba(255, 255, 255, 0.03); /* Extremely subtle white tint */
+    --glass-border: rgba(255, 255, 255, 0.08);  /* Faint border to define the edge */
+    --glass-blur: blur(16px);                   /* The actual frost effect */
+    
+    /* Text */
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    
+    /* UI Elements */
+    --accent-glow: 0 0 20px rgba(59, 130, 246, 0.5); /* For buttons or active states */
+}
+
+body {
+    background: var(--body-bg);
+    color: var(--text-primary);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    
+    /* Optional: If you want to use an abstract background image instead of a gradient */
+    /* background-image: url('path/to/dark-abstract-bg.jpg'); */
+    /* background-size: cover; */
+}
+
+.glass-panel {
+    /* 1. The semi-transparent background */
+    background: var(--glass-surface);
+    
+    /* 2. The magic blur effect */
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur); /* Required for Safari support */
+    
+    /* 3. The structural styling */
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Deep shadow to lift it off the background */
+    
+    /* Inner spacing */
+    padding: 24px;
+}

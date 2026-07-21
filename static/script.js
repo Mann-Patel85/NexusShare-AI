@@ -7,15 +7,19 @@ function fetchFiles() {
         .then(response => response.json())
         .then(data => {
             const fileList = document.getElementById("file-list");
-            const files = data.available_files;
-
-            if (files.length > 0) {
-                files.forEach(file => {
+            
+            // Clear any old content first
+            fileList.innerHTML = ""; 
+            
+            // Safely check if available_files exists AND actually has items
+            if (data.available_files && data.available_files.length > 0) {
+                data.available_files.forEach(file => {
                     const li = document.createElement("li");
                     li.textContent = `📄 ${file}`;
                     fileList.appendChild(li);
                 });
             } else {
+                // If it doesn't exist (e.g., folder just created or is empty)
                 fileList.innerHTML = "<li>No files available in the shared folder.</li>";
             }
         })
