@@ -43,3 +43,18 @@ body {
     /* Inner spacing */
     padding: 24px;
 }
+
+/* Drop Zone */
+.drop-zone {
+    border: 2px dashed var(--glass-border);
+    text-align: center;
+    padding: 40px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.drop-zone.dragover {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: #3b82f6;
+}

@@ -15,6 +15,15 @@
         
         <!-- Only keep this one glass panel section! -->
         <div class="glass-panel">
+            <div class="upload_section">
+                <div id="drop-zone" class="drop-zone glass-panel">
+                    <h3 style="margin-top: 0;">📥 Drag & Drop Files</h3>
+                    <p>or click anywhere in this box to browse</p>
+                    <input type="file" id="file-input" style="display: none;">
+                </div>
+                <p id="upload-status"></p>
+            </div>
+            <hr>
             <h2>Available Files</h2>
             <ul id="file-list">
                 <!-- JS injects files here -->
