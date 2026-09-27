@@ -1,0 +1,52 @@
+{
+  "api_router_backend.py": {
+    "tags": [
+      "Technology & Code",
+      "PY",
+      "Fastapi",
+      "Import",
+      "App",
+      "Users",
+      "Websocket"
+    ],
+    "predicted_category": "Technology & Code",
+    "confidence": 0.3815,
+    "summary": "from fastapi import FastAPI, WebSocket import asyncio app = FastAPI() @app.get(\"/api/v1/users\") def get_users(): return {\"status\": \"ok\", \"users\": []}",
+    "biometric_protected": false,
+    "custom_tags": [],
+    "domain_scores": {
+      "Academic & Research": 0.097,
+      "Finance & Business": 0.135,
+      "Legal & Contracts": 0.104,
+      "Marketing & Sales": 0.091,
+      "Medical & Healthcare": 0.092,
+      "Personal & HR": 0.099,
+      "Technology & Code": 0.381
+    }
+  },
+  "Non_Disclosure_Agreement_2026.txt": {
+    "tags": [
+      "Legal & Contracts",
+      "TXT",
+      "Non",
+      "Disclosure",
+      "Agreement",
+      "Confidentiality",
+      "Terms"
+    ],
+    "predicted_category": "Legal & Contracts",
+    "confidence": 0.9041,
+    "summary": "CONFIDENTIALITY & NON-DISCLOSURE AGREEMENT This Agreement terms and conditions govern the non-disclosure of proprietary trade secrets, intellectual property, copyright, patent jurisdiction, liability and arbitration.",
+    "biometric_protected": true,
+    "custom_tags": [],
+    "domain_scores": {
+      "Academic & Research": 0.012,
+      "Finance & Business": 0.021,
+      "Legal & Contracts": 0.904,
+      "Marketing & Sales": 0.017,
+      "Medical & Healthcare": 0.017,
+      "Personal & HR": 0.017,
+      "Technology & Code": 0.012
+    }
+  }
+}

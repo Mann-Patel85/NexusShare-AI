@@ -1,0 +1,100 @@
+================================================================================
+                           NEXUSSHARE AI - PROJECT ANALYSIS
+================================================================================
+
+1. OVERVIEW & PROJECT VISION
+--------------------------------------------------------------------------------
+NexusShare AI is a zero-cloud, peer-to-peer local network file sharing, AI intelligence,
+steganography vault, and biometric security platform built with Python (FastAPI) 
+and React 19 (Vite). It enables high-speed, secure file transfer across local 
+Wi-Fi intranets without relying on third-party cloud infrastructure.
+
+
+2. MODULAR PROJECT STRUCTURE & ARCHITECTURE
+--------------------------------------------------------------------------------
+Root (`NexusShare-AI/`):
+  │
+  ├── backend/               # Production Modular FastAPI Backend
+  │   ├── app/
+  │   │   ├── api/
+  │   │   │   ├── __init__.py
+  │   │   │   └── routes.py  # Central APIRouter REST & WebSocket Endpoints
+  │   │   ├── core/
+  │   │   │   ├── __init__.py
+  │   │   │   └── config.py  # Path constants, IP discovery, & utilities
+  │   │   ├── services/      # Modular Feature & Intelligence Engines
+  │   │   │   ├── __init__.py
+  │   │   │   ├── document_classifier.py # ML Text Classifier & Auto-Tagging
+  │   │   │   ├── biometric_security.py  # OpenCV Facial Recognition
+  │   │   │   ├── websocket_manager.py   # Live Telemetry & WebSockets
+  │   │   │   ├── document_qa.py        # Zero-Cloud AI Document Q&A
+  │   │   │   ├── steganography.py      # OpenCV Image Steganography Vault
+  │   │   │   ├── ghost_share.py        # Self-Destruct Ghost Shares
+  │   │   │   └── storage_dedup.py      # AI Smart Storage Deduplication
+  │   │   └── data/          # Persistent Metadata Records (JSON)
+  │   │       ├── file_metadata.json
+  │   │       ├── biometric_profile.json
+  │   │       └── ghost_shares.json
+  │   ├── main.py            # Main ASGI Server Entry Point
+  │   └── shared_files/      # Local Wi-Fi Network Storage Directory
+  │
+  ├── frontend/              # Modern React 19 + Vite Single Page App
+  │   ├── src/
+  │   │   ├── App.jsx        # Glassmorphic UI Dashboard & Modals
+  │   │   └── index.css      # Custom Dark Mode Glassmorphism & Animations
+  │   ├── dist/              # Production Compiled Web Assets
+  │   └── package.json
+  │
+  ├── venv/                  # Python Virtual Environment
+  ├── README.md              # Feature Documentation & Execution Guide
+  ├── PROJECT_ANALYSIS.txt   # Complete Codebase Architecture Reference
+  └── .gitignore             # Version Control Exclusion Rules
+
+
+3. COMPREHENSIVE SERVICE ENGINES ANALYSIS
+--------------------------------------------------------------------------------
+
+[1] app/services/document_classifier.py (ML Text Classifier & Auto-Tagging)
+    - Extractor: Text extraction from PDF (`pypdf`), DOCX (`python-docx`), TXT, MD, Code.
+    - Model: TF-IDF vectorizer + SGDClassifier trained on 7 domains:
+      * Finance & Business, Legal & Contracts, Technology & Code, Medical & Healthcare,
+        Academic & Research, Marketing & Sales, Personal & HR.
+    - Tagging: N-gram keyphrase TF-IDF term scoring.
+
+[2] app/services/biometric_security.py (OpenCV Facial Recognition Security)
+    - Haar Cascade face detection + 128-dimensional spatial histogram feature extraction.
+    - Cosine similarity matching (>72% threshold) issuing single-use short-lived tokens.
+    - Webcam scanner modal with face alignment box & scanning beam.
+
+[3] app/services/websocket_manager.py (Real-Time Network Telemetry)
+    - `psutil` network IO polling for live Download/Upload bandwidth speeds (KB/s, MB/s).
+    - CPU & RAM percentage telemetry and connected peer node tracking over `/ws/network`.
+
+[4] app/services/document_qa.py (Zero-Cloud Local AI Document Q&A)
+    - Sentence-aware text chunking & TF-IDF semantic vector similarity search.
+    - Answers document questions locally without sending text to external LLM APIs.
+
+[5] app/services/steganography.py (OpenCV Image Steganography Vault)
+    - Encrypts and hides secret text/document payloads inside cover image LSB pixels.
+    - Extracts & decrypts hidden payloads from stego images.
+
+[6] app/services/ghost_share.py (Self-Destruct Ghost Shares)
+    - Configures self-destruct download limits & TTL countdown timers.
+    - Zero-fills file bytes and shreds files from disk upon expiration.
+
+[7] app/services/storage_dedup.py (AI Smart Storage Deduplication)
+    - SHA-256 content duplicate scanner & space reclaimer.
+
+
+4. HOW TO RUN
+--------------------------------------------------------------------------------
+1. Activate Virtual Environment:
+   .\venv\Scripts\activate
+
+2. Start FastAPI Server:
+   python backend/main.py
+
+3. Open in Browser:
+   Local Machine: http://localhost:8000
+   Local Intranet: http://<your-local-ip>:8000
+================================================================================
